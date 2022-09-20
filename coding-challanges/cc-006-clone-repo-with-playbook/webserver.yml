@@ -1,0 +1,27 @@
+- name: Cloning a Remote Repository Using Ansible Playbook
+  hosts: web_server
+  become: yes
+  tasks: 
+    - name: install the latest version of Git, 
+      package:
+        name: 
+          - git
+        state: latest
+
+    - name: clone the repo of the website
+      shell: |
+        if [ -z "$(ls -al /home/ec2-user/ | grep .git)" ]; then
+          git clone https://github.com/seryum65/reverse_number.git //home/ec2-user/
+          echo "ok"
+        else
+          echo "already cloned..."
+        fi
+      register: result
+
+    - name: DEBUG
+      debug:
+        var: result
+
+    - selinux:
+        state: disabled    
+

@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mysql-config
+data:
+  MYSQL_DATABASE: phonebook
+  MYSQL_USER: seryum

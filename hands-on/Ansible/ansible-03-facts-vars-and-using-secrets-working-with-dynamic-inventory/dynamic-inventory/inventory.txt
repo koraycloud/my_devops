@@ -1,0 +1,4 @@
+[servers]
+web_server ansible_host=3.80.87.157 ansible_ssh_private_key_file=/home/ec2-user/firstkey.pem ansible_user=ec2-user
+[dbservers]
+db_server ansible_host=54.90.136.84 ansible_ssh_private_key_file=/home/ec2-user/firstkey.pem ansible_user=ec2-user

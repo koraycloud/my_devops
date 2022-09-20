@@ -1,0 +1,148 @@
+docker networking
+-----------------
+well come lad,es and centelmens
+
+
+1. Docker Networking
+
+2. Networking overview
+Network drivers
+User-defined bridge networks
+Run - Port mappings
+Other Network drivers
+docker network Commands
+
+3. let begin with Networking overview
+
+4.  
+
+A network is two or more computer systems linked together by some form of the transmission medium, that enables them to share information. It does not matter whether the network contains two or thousands of machines; the concept is essentially the same.
+An excellent example of a network is the Internet, which connects millions of devices all over the world.
+
+what do you know about network? switchs, routers, iptebles, dns, subnets, firewills, all those thins networking
+
+5.Network is usually involved in the outage in a production environment. 
+
+Art of networking is not easy, it is complex and takes a lot of experience and learning to master it.
+
+Correct configuration of network is crucial to establish an uninterrupted communication for microservice architecture.
+
+first thing first, 400 error , 500 , 200, 300 errors
+
+
+6. Just like regular networking components, 
+container networking involves container:
+private IP
+network interface
+routing table 
+networking config file (resolv.conf)
+
+Tens or hundreds of containers running need a good IPAM and DNS.   IPAM = IP Address Management
+
+Container networking is a namespace inside the container, which provides layer of isolation. 
+
+ENI Elastic netroek interface.
+
+
+7. 
+
+- One of the reasons Docker containers and services are so powerful is that you can connect them together, or connect them to non-Docker workloads.
+- Whether your Docker hosts run Linux, Windows, or a mix of the two, you can use Docker to manage them in a platform-agnostic way.
+
+-- Yes.The term is agnostic is important here.What does it mean for docker structure.According to Docker, a container is ” a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it.” And since containers are platform-independent, as you know Docker can run across both Windows- and Linux-based platforms.
+
+containers need to comminicate to each others, in that point networking comes into play.
+
+8. A network driver is a software program that controls a device used to connect a computer to a network.Network Driver is software to enable network device to communicate between the computer and OS or with other n/w devices.
+
+9. 
+
+10. 
+- bridge is the private default network driver. If we don’t specify a driver, this is the type of network we are creating. 
+- When we install the docker, the Docker daemon creates virtual ethernet bridge docker0 that performs the operation by automatically delivering packets among various network interfaces.
+
+-- If you don’t specify a driver, bridge network is the type of the driver that you are creating. Bridge networks are usually used when your applications run in standalone containers that need to communicate.
+
+11. When we create containers, it will automatically attach to the bridge driver.
+
+12. 
+- Host removes network isolation between the docker host and docker containers. It uses the host’s networking directly.
+- Host networks are best when the network stack should not be isolated from the Docker host, but we want other aspects of the container to be isolated.
+-- If you use the host network mode for a container, that container’s network stack is not isolated from the Docker host (the container shares the host’s networking namespace), and the container does not get its own IP-address allocated. For instance, if you run a container which binds to port 5000 and you use host networking, the container’s application is available on port 5000 on the host’s IP address.
+
+13. 
+- None network driver disables all networking of containers. 
+- None network driver will not configure any IP for the container and doesn’t have any access to the external network as well as for other containers.
+- It is used when a user wants to block the networking access to a container.
+
+-- If you want to completely disable the networking stack on a container, you can use the --network none flag when starting the container.
+
+14. User-defined bridge networks
+
+15. 
+- In addition to the default networks, users can create their own networks called user-defined networks of any network driver type.
+
+-- User-defined bridges provide automatic DNS resolution between containers. Containers on the default bridge network can only access each other by IP addresses.On a user-defined bridge network, containers can resolve each other by name or alias.
+
+16. Port mappings
+
+
+17. By default, when you create a container, it does not publish any of its ports to the outside world. To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag
+
+-- By default, when you create or run a container using docker create or docker run, it does not publish any of its ports to the outside world. To make a port available to services outside of Docker, or to Docker containers which are not connected to the container’s network, use the --publish or -p flag. This creates a firewall rule which maps a container port to a port on the Docker host to the outside world.
+
+18. There are two running containers in this host machine.They are mapped from their specific ports to the  host machine ports.The traffic that is coming from the outside  will be forwarded to container by following the ports that is exposed in the command line.
+
+
+19. ther Network drivers
+
+
+20. Overlay networks connect multiple Docker daemons together and enable swarm services to communicate with each other.
+
+
+
+21. Macvlan networks allow you to assign a MAC address to a container, making it appear as a physical device on your network.
+
+Using the macvlan driver is sometimes the best choice when dealing with legacy applications that expect to be directly connected to the physical network, rather than routed through the Docker host’s network stack.
+
+
+22. Network plugins: We can install and use third-party network plugins with Docker. These plugins are available from Docker Hub or from third-party vendors. 
+
+Third-party network plugins allow us to integrate Docker with specialized network stacks.
+
+23. Lets look at the docker network commands.
+
+
+
+
+I had to work different fields within my profession life. Starting a new field requires understanding everything from scratch. Sometimes I was wondering if it wouldn't be better if I always did the same job for a long time. I later realized that if people are not hungry for new things, life becomes monotonous and different areas expand one's vision. I understand that people with experience in different fields can have different perspectives, can identify problems faster and find solutions. My cloud knowledge stems from AWS related services. I have expertise in working with technologies such as: AWS Architecture, DevOps tools, Python, Linux and Networking. And I believe cloud is the future and Amazon is the heart of this issue. So I have been focusing on to improve my skills regarding AWS and DevOps. Recently my projects have been focused on to design applications in AWS environment.
+Please feel free to get in touch with me for professional matters...
+#AWS Engineer #AWS Cloud Engineer #DevOps AWS Engineer #Cloud AWS Engineer #Certified AWS Engineer #AWS Certified Solutions Architect #AWS Certified Solutions Architect Associate #DevOps Engineer #Cloud DevOps Engineer #DevOps Cloud Engineer #SysOps AWS #SysOps Engineer.
+
+---------------------
+
+I have an IT background of about 3 years. This experience includes IT support, Frontend Development and especially lately AWS Clouds and DevOps on which I have focused and developed myself with high motivation.
+
+I love doing sports (especially swimming), watching movies/tv series, trekking in nature and camping.
+
+--------------
+
+HakkındaHakkında
+Quick to grasp new technologies and tools. Proficient in building and designing effective Continuous Integration and Delivery (CI/CD) pipelines using containerization, orchestration, infrastructure automation tools, configuration management tools, monitoring, and AWS cloud solutions. Eager to contribute to other development teams in technical questions of continuous integration and continuous delivery integrated with strong troubleshooting abilities. Highly adaptable, motivation-setter, flexible professional who embraces teamwork but also likes to work independently.
+
+TECHNICAL SKILLS 
+Kubernetes | Jenkins | Docker | DockerHub | Terraform | Ansible | Ansible-Galaxy | ECS | ECR | Prometheus | Grafana | Maven | Nexus | Helm | Rancher | CloudFormation | EC2 | S3 | ALB | RDS | Snapshops | Volumes | IAM | VPC | ASG | DynamoDB | CloudFront | Lambda | EFS | Boto3 | CloudWatch | MariaDB | Route53 | Certificate Manager | DNS | SNS | SQS | Network | Linux | Python | HTML | CSS | Git | GitHub | SQL | NoSQL | Agile | Jira | Apache | Nginx | Bash Scripting | SDLC | CLI
+
+SOFT SKILLS 
+Motivation | Creativity | Communication | Active Listening | Teamwork | Flexibility | Critical Thinking | Problem Solving | Empathy | Resilience | Decision Making | Leadership | Time Management | Adaptability | Proactive Personality | Assertiveness | Positive Attitude | Self-Confidence
+
+
+
+
+--------------
+
+I'm passionate about customers, technology and use cases in equal measure. Finding new ways to deliver new outcomes with interesting technology is something that I've been doing for many years and is what gets me out of bed each morning.
+
+The technology landscape is constantly changing, be it new engines, new platforms or new deployment technologies. Having grown up with technology and technology change, I'm absolutely all about evolution and change, coupled with the need for stability and predictability.
+
+In my current role I look after a talented team of Field Specialists whose job it is to help our customers adopt the newest versions of our technology, through field enablement, content creation and best practice development.
